@@ -22,7 +22,7 @@ Source code and overview-level documentation of all software can be found at the
 
 ## Usage
 
-This hardware was developed and tested until October 2018 and is not currently maintained or supported. Troubleshooting and extensive technical skills will be needed to replicate the hardware design provided in this repository, requiring deep familiarity with laser cutting, 3-D printing, assembly of simple printed circuit boards, and circuit prototyping.
+This hardware was developed and tested until October 2018 and is not currently maintained or supported. Troubleshooting and extensive technical skills will be needed to independently replicate the hardware design from the documentation provided in this repository, requiring deep familiarity with laser cutting, 3-D printing, assembly of simple printed circuit boards, and circuit prototyping.
 
 ### Mechanical Fabrication
 
@@ -34,11 +34,11 @@ Two units of the magnet hub, used in the x- and y-axis linear actuators of the r
 
 Mechanical assembly can be performed following the photographs and notes in the `hardware/assembly_instructions/LHR Assembly of Laser Cut Parts.pdf` file.
 
-A 8mm x 2.50mm magnet, listed in the bill of materials, will need to be inserted into each 3D-printed magnet hub, and a magnet hub should be press-fitted to the D-shaped output shaft of the motor for each of the x- and y-axis linear actuators. A magnetic angle sensor printed circuit board (described below) should then be mounted to the linear actuator so that the angle sensor contacts the magnet.
+Additionally, an 8mm x 2.50mm magnet, listed in the bill of materials, will need to be inserted into each 3D-printed magnet hub, and a magnet hub should be press-fitted to the D-shaped output shaft of the motor for each of the x- and y-axis linear actuators. A magnetic angle sensor printed circuit board (described below) should then be mounted to the linear actuator so that the angle sensor contacts the magnet.
 
 ### Circuit Assembly
 
-The printed circuit board for the magnetic angle sensor, used in the x- and y-axis linear actuators of the robot, will need to be fabricated and assembled. For I2C switching of the magntic angle sensor boards, a circuit will need to be assembled (e.g. on a breadboard) from the schematic shown in the `hardware/electronic_circuits/LHR Circuit Diagrams.pdf` file. Additionally, a 5V-to-3.3V level shifter will need to be placed on the the I2C clock and data lines between the I2C switching circuit and the angle sensor boards, as the angle sensors require 3.3V power and logic while the Arduino operates on 5V power and logic.
+The printed circuit board for the magnetic angle sensor, used in the x- and y-axis linear actuators of the robot, will need to be fabricated and assembled. For I2C switching of the magnetic angle sensor boards, a simple MOSFET circuit will need to be assembled (e.g. on a breadboard) from the schematic shown in the `hardware/electronic_circuits/LHR Circuit Diagrams.pdf` file. Additionally, a 5V-to-3.3V level shifter will need to be placed on the the I2C clock and data lines between the I2C switching circuit and the angle sensor boards, as the angle sensors require 3.3V power and logic while the Arduino operates on 5V power and logic.
 
 Wiring and pin connections for the Arduino are shown in the `hardware/electronic_circuits/LHR Circuit Diagrams.pdf` file. Note that wires for the I2C signal lines must be kept as short as possible in order to mitigate radio frequency interference on those wires, which manifests as freezes in the Arduino software requiring a hard reset of the Arduino.
 
