@@ -38,7 +38,9 @@ Additionally, an 8mm x 2.50mm magnet, listed in the bill of materials, will need
 
 ### Circuit Assembly
 
-The printed circuit board for the magnetic angle sensor, used in the x- and y-axis linear actuators of the robot, will need to be fabricated and assembled. For I2C switching of the magnetic angle sensor boards, a simple MOSFET circuit will need to be assembled (e.g. on a breadboard) from the schematic shown in the `hardware/electronic_circuits/LHR Circuit Diagrams.pdf` file. Additionally, a 5V-to-3.3V level shifter will need to be placed on the the I2C clock and data lines between the I2C switching circuit and the angle sensor boards, as the angle sensors require 3.3V power and logic while the Arduino operates on 5V power and logic.
+The printed circuit board for the magnetic angle sensor, used in the x- and y-axis linear actuators of the robot, will need to be fabricated and assembled. Eagle CAD files and a zip archive of Gerber files can be found inside `hardware/electronic_circuits`, with filename `LHR Mag Sensor Mk2`.
+
+For I2C switching of the magnetic angle sensor boards, a simple MOSFET circuit will need to be assembled (e.g. on a breadboard) from the schematic shown in the `hardware/electronic_circuits/LHR Circuit Diagrams.pdf` file.
 
 Wiring and pin connections for the Arduino are shown in the `hardware/electronic_circuits/LHR Circuit Diagrams.pdf` file. Note that wires for the I2C signal lines must be kept as short as possible in order to mitigate radio frequency interference on those wires, which manifests as freezes in the Arduino software requiring a hard reset of the Arduino.
 
